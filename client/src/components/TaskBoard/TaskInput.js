@@ -107,7 +107,7 @@ export default function TaskInput() {
     const labels = useSelector((s) => s.tasks.labels);
     const dispatch = useDispatch();
     console.log("meta is ",meta)
-    console.log("labels is ",labels)
+    console.log("labels is ",labels) 
     function submitTask(e) {
         if (e.key === "Enter" && task.trim().length >= 1 && isInputValid) {
             let temp = task.trim().split(" ");

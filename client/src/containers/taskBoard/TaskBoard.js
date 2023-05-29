@@ -85,8 +85,8 @@ export function TaskBoard() {
     function isFocussed(id) {
         if (focussedTask !== null && focussedTask.id === id) return true;
         return false;
-    }
-
+    }     
+    // Tasks
     // input has both onChange and onKeyDown - can be optimised by using one and combining
 
     return (

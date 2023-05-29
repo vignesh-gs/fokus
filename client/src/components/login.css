@@ -1,0 +1,127 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+  /* outline: 2px solid red; */
+  overflow: hidden;
+}
+
+.flex-cont {
+  display: flex;
+}
+
+.auth-form-container {
+  max-width: 100%;
+  padding: 100px;
+  border-radius: 5px;
+  background-color: black;
+  box-shadow: 0 20px 50px rgb(250, 187, 24);
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(250, 187, 24);
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid rgb(250, 187, 24);
+  border-radius: 5px;
+  color: black;
+}
+
+.login-form button {
+  width: 106%;
+  padding: 10px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: rgb(250, 187, 24);
+  color: #000000;
+}
+
+.forgotpass {
+  display: block;
+  margin-bottom: 10px;
+  color: rgb(250, 187, 24);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.link-btn {
+  display: block;
+  margin-top: 10px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+}
+
+.link-btn::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 60%;
+  width: 40%;
+  height: 2px;
+  background-color: rgb(250, 187, 24);
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.link-btn:hover {
+  color: #ffcc00;
+}
+
+.link-btn:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.sign-in-option {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.sign-in-option::before,
+.sign-in-option::after {
+  content: "";
+  display: inline-block;
+  width: 50px;
+  height: 1px;
+  background-color: rgb(250, 187, 24);
+  vertical-align: middle;
+}
+
+.sign-in-option::before {
+  margin-right: 10px;
+}
+
+.sign-in-option::after {
+  margin-left: 10px;
+}
+
+.bg-image {
+  background-image: url("./fokuslogo.png");
+  /* background-image: url("./logo.svg"); */
+  background-repeat: no-repeat;
+  background-position: center;
+  /* height: 100vh; */
+  width: 85vw;
+  /* border: 2px solid red; */
+}

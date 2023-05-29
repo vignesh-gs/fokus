@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import "./aba.css";
 
 const Register = ({ onFormSwitch }) => {
   const [name, setName] = useState("");
@@ -8,15 +7,15 @@ const Register = ({ onFormSwitch }) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const history = useHistory();
+   const history = useHistory();
 
   const handleSignInClick = () => {
     history.push("/");
   };
-
+ 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+ 
     /*if (name === "" || password === "" || confirmPassword === "") {
       alert("Please fill in all the fields");
       return;
@@ -30,43 +29,44 @@ const Register = ({ onFormSwitch }) => {
     try {
       const response = await fetch("http://localhost:4000/register", {
         method: "POST",
-        crossDomain: true,
+        crossDomain:true,
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
-          "Access-Control-Allow-Origin": "*",
+          Accept:"application/json",
+          "Access-Control-Allow-Origin":"*"
         },
         body: JSON.stringify({
           name: name,
-          email: email,
+          email:email,
           password: password,
           confirmPassword: confirmPassword,
         }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log("then entered");
-          console.log(data, "userRegister");
-        });
+      }).then((res)=>res.json())
+        .then((data)=>{
+          console.log("then entered")
+          console.log(data,"userRegister")
+        })
 
       const data = await response.json();
-      console.log("data is ", data);
-      if (response.status && response.status >= 200 && response.status < 300) {
-        console.log("ifff entered");
-        alert("Form submitted successfully");
-      } else {
-        console.log("else entered");
-        alert(`Failed to submit form: ${data.message}`);
-      }
+      console.log("data is ",data)
+if (response.status && response.status >= 200 && response.status < 300) {
+  console.log("ifff entered")
+  alert('Form submitted successfully');
+} else {
+  console.log("else entered")
+  alert(`Failed to submit form: ${data.message}`);
+}
 
       //const data = await response.json();
       //alert("Form submitted successfully");
     } catch (error) {
       //alert(error.message);
-      console.log("main catch block entered");
-      console.log(error);
+      console.log("main catch block entered")
+      console.log(error)
     }
   };
+
+  
 
   return (
     <div className="container">
@@ -113,7 +113,7 @@ const Register = ({ onFormSwitch }) => {
             Sign Up
           </button>
 
-          <button className="signup-link" onClick={handleSignInClick}>
+          <button className="signup-link" onClick={handleSignInClick} >
             Already have an account? Sign In
           </button>
         </div>
@@ -123,6 +123,11 @@ const Register = ({ onFormSwitch }) => {
 };
 
 export default Register;
+
+
+
+
+
 
 /* const Register = ({ onFormSwitch }) => {
   const [name, setName] = useState("");
